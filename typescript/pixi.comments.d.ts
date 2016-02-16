@@ -916,7 +916,20 @@ declare module PIXI {
         y: number;
 
         click(e: InteractionData): void;
-        displayObjectUpdateTransform(): void;
+        
+        /*
+        * Updates the object transform for rendering.
+        *
+        * If the object has no parent, and no parent parameter is provided, it will default to Phaser.Game.World as the parent.
+        * If that is unavailable the transform fails to take place.
+        *
+        * The `parent` parameter has priority over the actual parent. Use it as a parent override.
+        * Setting it does **not** change the actual parent of this DisplayObject, it just uses the parent for the transform update.
+        *
+        * @method updateTransform
+        * @param {DisplayObject} [parent] - Optional parent to parent this DisplayObject transform from.
+        */
+        displayObjectUpdateTransform(parent: DisplayObject): void;
 
         /**
         * Retrieves the bounds of the displayObject as a rectangle object

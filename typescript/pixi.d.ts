@@ -485,7 +485,7 @@ declare module PIXI {
         y: number;
 
         click(e: InteractionData): void;
-        displayObjectUpdateTransform(): void;
+        displayObjectUpdateTransform(parent: DisplayObject): void;
         getBounds(matrix?: Matrix): Rectangle;
         getLocalBounds(): Rectangle;
         generateTexture(resolution?: number, scaleMode?: number, renderer?: PixiRenderer): Texture;
